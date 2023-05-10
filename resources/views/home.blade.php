@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Template
+    Crud - Home
 @endsection
 
 @section('page-main')
-    <h1>Template</h1>
+    <h1>Home</h1>
 @endsection
