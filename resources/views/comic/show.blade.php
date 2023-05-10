@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-main')
-    <div class="container">
+    <div class="container py-4">
         <a href="{{ route('comics.index') }}" class="btn btn-primary mb-4">Torna alla lista</a>
         <div>
             <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">

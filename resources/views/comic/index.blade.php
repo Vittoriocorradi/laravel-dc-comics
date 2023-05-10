@@ -6,6 +6,8 @@
 
 @section('page-main')
     <div class="container">
+        <h1>Lista fumetti</h1>
+        <a href="{{ route('comics.create')}}" class="btn btn-primary mb-3">Aggiungi un fumetto</a>
         <div class="row">
             @foreach ($comics as $comic)
                 <div class="card col-3">
