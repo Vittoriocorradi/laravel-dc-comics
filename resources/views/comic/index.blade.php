@@ -13,7 +13,7 @@
                         <h5 class="card-title">{{ $comic->title }}</h5>
                         <div class="card-text">{{ $comic->series }}</div>
                         <div class="card-text">{{ $comic->price }}$</div>
-                        <a href="#" class="btn btn-primary mt-2">Vai al dettaglio</a>
+                        <a href="{{ route('comics.show', $comic->id)}}" class="btn btn-primary mt-2">Vai al dettaglio</a>
                     </div>
                 </div>
             @endforeach
