@@ -20,7 +20,7 @@
                         <div>Prezzo: {{ $comic->price }}$</div>
                         <div>Serie: {{ $comic->series }}</div>
                         <div>Tipo: {{ $comic->type }}</div>
-                        <div>Data di pubblicazione: {{ \Carbon\Carbon::parse($comic->sale_date)->locale('it_IT')->isoFormat('d MMMM YYYY') }}</div>
+                        <div>Data di pubblicazione: {{ \Carbon\Carbon::parse($comic->sale_date)->locale('it_IT')->isoFormat('DD/MM/YYYY') }}</div>
                     </div>
                     <div class="col-6">
                         <div>Disegnatore: {{ $comic->artists }}</div>

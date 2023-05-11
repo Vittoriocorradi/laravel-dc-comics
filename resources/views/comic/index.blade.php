@@ -17,6 +17,11 @@
                         <div class="card-text">{{ $comic->price }}$</div>
                         <a href="{{ route('comics.show', $comic->id)}}" class="btn btn-primary mt-2">Vai al dettaglio</a>
                         <a href="{{ route('comics.edit', $comic->id)}}" class="btn btn-primary mt-2">Modifica</a>
+                        <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Cancella" class="btn btn-danger">
+                        </form>
                     </div>
                 </div>
             @endforeach
