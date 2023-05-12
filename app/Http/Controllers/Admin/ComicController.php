@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ComicRequest;
 use App\Models\Comic;
-use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
@@ -35,20 +35,21 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
-        $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'nullable',
-            'thumb' => 'required|url',
-            'price' => 'required|decimal:2|lt:1000',
-            'series' => 'required',
-            'sale_date' => 'required|date',
-            'type' => 'required',
-            'artists' => 'required',
-            'writers' => 'required'
-        ]);
+        // $request->validate([
+        //     'title' => 'required|max:255',
+        //     'description' => 'nullable',
+        //     'thumb' => 'required|url',
+        //     'price' => 'required|decimal:2|lt:1000',
+        //     'series' => 'required',
+        //     'sale_date' => 'required|date',
+        //     'type' => 'required',
+        //     'artists' => 'required',
+        //     'writers' => 'required'
+        // ]);
         
+        $request->validated();
 
         $data = $request->all();
 
@@ -97,20 +98,22 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
 
-        $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'nullable',
-            'thumb' => 'required|url',
-            'price' => 'required|decimal:2|lt:1000',
-            'series' => 'required',
-            'sale_date' => 'required|date',
-            'type' => 'required',
-            'artists' => 'required',
-            'writers' => 'required'
-        ]);
+        // $request->validate([
+        //     'title' => 'required|max:255',
+        //     'description' => 'nullable',
+        //     'thumb' => 'required|url',
+        //     'price' => 'required|decimal:2|lt:1000',
+        //     'series' => 'required',
+        //     'sale_date' => 'required|date',
+        //     'type' => 'required',
+        //     'artists' => 'required',
+        //     'writers' => 'required'
+        // ]);
+
+        $request->validated();
 
         $data = $request->all();
 
