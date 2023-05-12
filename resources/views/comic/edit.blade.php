@@ -8,6 +8,19 @@
     <div class="container py-4">
         <a href="{{ route('comics.index') }}" class="btn btn-primary mb-4">Torna alla lista</a>
         <h1>Modifica fumetto</h1>
+
+        <div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
+
         <form action="{{ route('comics.update', $comic->id)}}" method="POST">
             @csrf
             @method('PUT')
